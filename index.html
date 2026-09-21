@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iOS App Archive Catalog</title>
+    <meta
+      name="description"
+      content="Browse archived iOS app metadata including bundle IDs, versions, minimum OS requirements, and IPA file details."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Archive Catalog</p>
+          <h1>iOS App Archive</h1>
+        </div>
+        <div class="app-badge">App Store Archive</div>
+      </header>
+
+      <section class="toolbar" aria-label="App search and catalog controls">
+        <label class="search-field" for="searchInput">
+          <span class="search-label">Search apps</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search by app, bundle, version, IPA file..."
+            autocomplete="off"
+          />
+        </label>
+        <button id="resetButton" type="button" class="ghost-button">Reset</button>
+      </section>
+
+      <section class="stats-grid" aria-label="Catalog statistics">
+        <article class="stat-card">
+          <span id="totalApps" class="stat-number">0</span>
+          <span class="stat-label">Apps</span>
+        </article>
+        <article class="stat-card">
+          <span id="platformCount" class="stat-number">0</span>
+          <span class="stat-label">iOS</span>
+        </article>
+        <article class="stat-card">
+          <span id="sizeTotal" class="stat-number">0 MB</span>
+          <span class="stat-label">Archive Size</span>
+        </article>
+      </section>
+
+      <main class="catalog-card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>App Name</th>
+                <th>Bundle ID</th>
+                <th>Version</th>
+                <th>Platform</th>
+                <th>Minimum OS</th>
+                <th>IPA File</th>
+                <th>File Size</th>
+              </tr>
+            </thead>
+            <tbody id="appTableBody"></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
